@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <title>Gallery demo</title>
+     <link rel="stylesheet" href="css\style.css">
+     <link rel="stylesheet" href="css/gallery.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+     <style>
+          body {
+               font-family: system-ui, sans-serif;
+               background: #f7f3ec;
+               margin: 0
+          }
+
+          .wrap {
+               max-width: 100%;
+               margin-bottom: 40px;
+          }
+
+          #ga {
+               height: 280px;
+                background:
+            linear-gradient(
+                80deg,
+                #15110C 0%,
+                #15110C 25%,
+                rgba(21, 17, 12, 0.85) 40%,
+                rgba(21, 17, 12, 0.3) 65%,
+                transparent 100%
+            ) #2F1F13;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; 
+            align-items: flex-start;
+            align-content: flex-start;
+            padding-bottom: 48px;
+          }
+
+          .m {
+               margin-left: 24px;
+          }
+     </style>
+</head>
+
+<body>
+<header>
+    <nav id="navbar" class="navb">
+        <div class="logo-container l">
+            <img src="images\sign.png" height="50px" class="logos" id="logo">
+        </div>
+        <ul class="ul l">
+            <li><a href="index.html" class="links" id="nav-home">Home</a></li>
+            <li><a href="index.html#About" class="links" id="nav-about">About</a></li>
+            <li><a href="gallery-demo.html" class="links" id="nav-gallery">Gallery</a></li>
+            <li><a href="index.html#contacts" class="links" id="nav-customisation">Comissions</a></li>
+            <li><a href="index.html#contacts" class="links" id="nav-contact2">Contact</a></li>
+        </ul>
+        <div class="icons-container l">
+            <i class="fa-solid fa-magnifying-glass nav-icons"></i>
+            <i class="fa-solid fa-cart-shopping nav-icons"></i>
+            <i class="fa-solid fa-bars" id="threebars"></i>
+        </div>
+    </nav>
+    </header>
+
+     <div class="wrap">
+          <div id="ga">
+          <p class="line m">THE COLLECTION</p>
+          <h1 class="headline m">Gallery</h1>
+          <p class="fonb m">Original, hand-printed works. Every piece is one of a kind.</p>
+          </div>
+          <!-- Filter bar: search, medium, style (category) and sort order (default). Other options:
+      data-group="1"    shows one section per category instead of buttons
+      data-featured="1" data-limit="5"   shows only Popular Paintings (for the home page) -->
+          <div id="sg-gallery"></div>
+     </div>
+
+     <footer>
+        <div id="footer-info">
+            <div id="copyrights">
+              <img src="images\sign.png" height="45px" class="logos" id="logo">
+              <p id="p">&copy; Satish Fine Art Gallary. All rights reserved.</p>
+            </div>
+            <div id="fot-nav">
+            <ul>
+            <li><a href="index.html" class="links" id="nav-home">Home</a></li>
+            <li><a href="index.html#About" class="links" id="nav-about">About</a></li>
+            <li><a href="gallery-demo.html" class="links" id="nav-gallery">Gallery</a></li>
+            <li><a href="index.html#contacts" class="links" id="nav-customisation">Comissions</a></li>
+            <li><a href="index.html#contacts" class="links" id="nav-contact2">Contact</a></li>
+             </ul>
+             </div>
+
+             <div class="thought">
+             <p class="c">Art speaks where words cannot.</p>
+             <p class="line">- Satish</p>
+             </div>
+        </div>
+      </footer>
+
+     <script src="/js/app.js"></script>
+     <script src="js/sg-gallery.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Admin | Satish Fine Art Gallery</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Newsreader:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+<style>body{display:block}main{max-width:1100px;margin:0 auto}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}.top .act a{text-decoration:none}.crow{display:flex;gap:8px;margin-bottom:8px;align-items:center}.crow input{flex:1;background:var(--p2);border:1px solid var(--line);border-radius:10px;padding:8px 12px}.crow .mu{min-width:70px;text-align:right}</style></head>
+<body>
+<main>
+ <div class="top"><h1>Paintings</h1><div class="act"><a class="btn ghost sm" href="/" target="_blank" rel="noopener">View website</a><button class="btn ghost sm" id="out">Sign out</button></div></div>
+ <p class="sub" id="sum">Add, edit and remove the paintings shown on your website.</p>
+ <div class="tools"><input id="sq" type="search" placeholder="Search by title"><select id="fc" aria-label="Filter by category"></select><button class="btn ghost" id="mc">Manage categories</button><button class="btn" id="add">Add painting</button></div>
+ <div id="list"></div>
+</main>
+
+<dialog id="pd"><h2 id="pt">Add painting</h2>
+ <form id="pf" class="f">
+  <div class="full"><label for="t">Title</label><input id="t" required maxlength="120"></div>
+  <div><label for="pr">Price (₹)</label><input id="pr" type="number" min="0" required></div>
+  <div><label for="sz">Size / ratio</label><input id="sz" maxlength="40" placeholder='24" x 36"'></div>
+  <div><label for="md">Medium</label><input id="md" maxlength="60" list="mdl" placeholder="Oil on Canvas" autocomplete="off">
+    <datalist id="mdl"><option value="Oil on Canvas"><option value="Acrylic on Canvas"><option value="Watercolor on Paper"><option value="Mixed Media on Canvas"><option value="Charcoal on Paper"><option value="Pastel on Paper"><option value="Ink on Paper"></datalist></div>
+  <div><label for="st">Status</label><select id="st"><option value="available">Available</option><option value="sold">Sold</option></select></div>
+  <div class="full"><label for="cat">Category</label><select id="cat"></select></div>
+  <div class="full chk"><input id="ft" type="checkbox"><label for="ft" style="margin:0;color:var(--tx)">Show in "Popular Paintings" (featured)</label></div>
+  <div class="full"><label for="ds">Description</label><textarea id="ds" rows="4" maxlength="3000"></textarea></div>
+  <div class="full"><label>Images (up to 6, JPG/PNG/WebP, 8 MB each). The first image is the cover.</label><div class="imgs" id="cur"></div>
+   <input id="im" type="file" accept="image/jpeg,image/png,image/webp" multiple><div class="imgs" id="prev"></div></div>
+  <div class="full"><p class="err" id="perr" role="alert"></p><div class="foot"><button type="button" class="btn ghost" id="pc">Cancel</button><button class="btn" type="submit" id="ps">Save painting</button></div></div>
+ </form></dialog>
+<dialog id="cd"><h2>Categories</h2>
+ <p class="mu" style="margin-bottom:14px">Create groups like Nature, Portraits or Abstract. Visitors can filter the gallery by them. Deleting a category keeps its paintings; they just become uncategorised.</p>
+ <div id="clist"></div>
+ <form id="cform" class="crow" style="margin-top:16px"><input id="cn" placeholder="New category name" maxlength="40" required><button class="btn" type="submit">Add</button></form>
+ <p class="err" id="cerr" role="alert"></p><div class="foot"><button class="btn ghost" id="cclose">Close</button></div></dialog>
+<div id="toast" role="status"></div>
+<script src="admin.js"></script></body></html>
