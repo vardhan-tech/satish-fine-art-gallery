@@ -49,7 +49,23 @@ app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   res.status(status).json({ error: msg });
 });
 
-connectDB().then(() => {
+//connectDB().then(() => {
+ // const port = process.env.PORT || 3000;
+//  app.listen(port, () => console.log(`Running on http://localhost:${port}   Admin panel: http://localhost:${port}/admin/`));
+//}).catch(e => { console.error(e.message); process.exit(1); });
+
+// ... [Keep all your existing middleware, rate limiters, routes, and error handlers exactly the same] ...
+
+// 1. Establish database connection out-of-band (Serverless style)
+connectDB().catch(e => { 
+  console.error('Database connection failed:', e.message); 
+});
+
+// 2. ONLY run app.listen if running LOCALLY (allows npm run dev to still work!)
+if (process.env.NODE_ENV !== 'production') {
   const port = process.env.PORT || 3000;
-  app.listen(port, () => console.log(`Running on http://localhost:${port}   Admin panel: http://localhost:${port}/admin/`));
-}).catch(e => { console.error(e.message); process.exit(1); });
+  app.listen(port, () => console.log(`Running on http://localhost:${port} Admin panel: http://localhost:${port}/admin/`));
+}
+
+// 3. CRITICAL FOR VERCEL: Export the app instance
+module.exports = app;
