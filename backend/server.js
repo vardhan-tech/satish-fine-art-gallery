@@ -38,7 +38,7 @@ app.use('/admin',
     defaultSrc: ["'self'"], scriptSrc: ["'self'"], styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
     fontSrc: ['https://fonts.gstatic.com'], imgSrc: ["'self'", 'data:', 'blob:', 'https://res.cloudinary.com'],
     connectSrc: ["'self'"], objectSrc: ["'none'"], baseUri: ["'self'"], frameAncestors: ["'none'"] } }),
-  express.static(path.join(__dirname, '../Frontend/admin')));
+  express.static(path.join(__dirname, '../Frontend/admin/login.html')));
 
 app.use(express.static(path.join(__dirname, '../Frontend/public')));   // put your frontend files in /public
 
